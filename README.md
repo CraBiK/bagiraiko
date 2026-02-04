@@ -1,37 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BagiraWeb — Динамический сайт-каталог продукции
 
-## Getting Started
+Современный веб-сайт с панелью управления (CMS), созданный для удобного отображения каталога товаров, брендов и прайс-листов.
 
-First, run the development server:
+## 🚀 Технологический стек
+* **Frontend:** Next.js 15 (App Router)
+* **Стилизация:** Tailwind CSS + shadcn/ui
+* **Админ-панель:** Sanity CMS (Headless CMS)
+* **Анимации и Галерея:** Lucide React, Yet Another React Lightbox
+* **Язык:** TypeScript
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Основные функции
+- **Управление контентом:** Полное редактирование категорий, записей и контактов через встроенную админку Sanity.
+- **Динамический роутинг:** Страницы товаров и категорий создаются автоматически на основе данных из базы.
+- **Галерея прайс-листов:** Удобный просмотр изображений во весь экран с поддержкой Lightbox.
+- **Многоуровневое меню:** Навигация по категориям продукции в реальном времени с открытием по наведению.
+- **Темная тема:** Полная поддержка светлого и темного режимов оформления.
+- **SEO-friendly:** Оптимизированная структура страниц и метаданных.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Установка и запуск
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Клонируйте репозиторий:**
+   git clone https://github.com/твой-логин/bagiraiko.git
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Установите зависимости:**
+   npm install
 
-## Learn More
+3. **Настройте окружение:**
+   Создайте файл .env.local в корне проекта и добавьте:
+   NEXT_PUBLIC_SANITY_PROJECT_ID="ваш_id_проекта"
+   NEXT_PUBLIC_SANITY_DATASET="production"
 
-To learn more about Next.js, take a look at the following resources:
+4. **Запустите проект:**
+   npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# bagiraiko" 
+## 📁 Структура проекта
+- `/src/app` — Страницы и логика приложения (Next.js)
+- `/src/app/(site)` — Основные страницы сайта (Layout, Page, Catalog, Contact)
+- `/src/app/studio` — Точка входа в админ-панель Sanity
+- `/src/components` — UI компоненты (shadcn/ui, Gallery, Navbar)
+- `/src/sanity` — Схемы и конфигурация админ-панели
+- `/src/lib` — Настройки подключения к базе данных (sanity client)
