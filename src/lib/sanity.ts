@@ -10,7 +10,8 @@ export const client = createClient({
 export async function getCategories() {
   const query = `*[_type == "category"] {
     title,
-    "slug": slug.current
+    "slug": slug.current,
+    "image": image.asset->url
   }`
   return await client.fetch(query)
 }

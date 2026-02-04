@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'category',
@@ -15,15 +15,21 @@ export default defineType({
       name: 'slug',
       title: 'Ссылка (URL)',
       type: 'slug',
-      options: {source: 'title'},
+      options: { source: 'title' },
       validation: (Rule) => Rule.required(),
+    }),
+    // НОВОЕ ПОЛЕ:
+    defineField({
+      name: 'image',
+      title: 'Изображение категории',
+      type: 'image',
+      options: { hotspot: true },
     }),
     defineField({
       name: 'parent',
       title: 'Родительская категория',
       type: 'reference',
-      to: [{type: 'category'}],
-      description: 'Выбери, если это подкатегория. Оставь пустым, если главная.',
+      to: [{ type: 'category' }],
     }),
   ],
 })
