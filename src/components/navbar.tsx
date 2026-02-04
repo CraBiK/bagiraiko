@@ -53,12 +53,16 @@ export async function Navbar() {
           <a href="/contact" className="hover:text-primary transition-colors">Контакты</a>
         </div>
 
-        <div className="flex items-center gap-3">
-          <ModeToggle />
-          <Button variant="outline" className="hidden sm:flex" asChild>
-            <a href="/catalog">Каталог</a>
-          </Button>
-        </div>
+        // Найди этот блок в правой части Navbar:
+		<div className="flex items-center gap-3">
+		  <ModeToggle />
+		  <Button variant="outline" className="hidden sm:flex" asChild>
+			{/* Теперь ссылка ведет на файл из админки */}
+			<a href={settings?.priceListUrl || "#"} target="_blank" rel="noopener noreferrer">
+			  Скачать прайс
+			</a>
+		  </Button>
+		</div>
       </div>
     </nav>
   )

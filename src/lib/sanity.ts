@@ -19,7 +19,8 @@ export async function getSettings() {
   const query = `*[_type == "settings"][0] {
     phone,
     email,
-    address
+    address,
+    "priceListUrl": mainPriceList.asset->url
   }`
   return await client.fetch(query)
 }

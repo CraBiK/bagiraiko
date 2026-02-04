@@ -20,5 +20,11 @@ export default defineType({
       title: 'Адрес',
       type: 'text',
     }),
+    // НОВОЕ ПОЛЕ ДЛЯ ОБЩЕГО ПРАЙСА
+    defineField({
+      name: 'mainPriceList',
+      title: 'Главный прайс-лист (общий файл)',
+      type: 'file',
+    }),
   ],
 })
